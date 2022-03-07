@@ -5,8 +5,9 @@ from matplotlib import pyplot as plt
 from mpl_toolkits import mplot3d
 from os import listdir
 
-maneuvers = listdir("./simdata2021")
-
+def get_maneuvers(path:str):
+    maneuvers = listdir(path)
+    return maneuvers
 
 def load_speeds(path):
     data = loadmat(path)
@@ -38,9 +39,9 @@ def convert_speed_to_position(path):
         # dy = (u_n[i]*math.cos(Theta[i])+(v_n[i]*math.sin(Phi[i])+w_n[i]*math.cos(Phi[i]))*math.sin(Theta[i]))*math.sin(Psi[i])+(v_n[i]*math.cos(Phi[i])-w_n[i]*math.sin(Phi[i]))*math.cos(Psi[i])+WyE
         # dz = -u_n[i]*math.sin(Theta[i])+(v_n[i]*math.sin(Phi[i])+w_n[i]*math.cos(Phi[i]))*math.cos(Theta[i]) + WzE
 
-        x += (u_n[i][0] + WxE) * dt
-        y *= (v_n[i][0] + WyE) * dt
-        z += (w_n[i][0] + WzE) * dt
+        x += (u_n[i][0] + WxE) * 0.01
+        y += (v_n[i][0] + WyE) * 0.01
+        z += (w_n[i][0] + WzE) * 0.01
         x_path.append(x)
         y_path.append(y)
         z_path.append(z)
