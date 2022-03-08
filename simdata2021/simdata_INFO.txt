@@ -1,0 +1,21 @@
+Manoeuvre: xxxxx
+
+Trim condition  :
+Aircraft weight : 4500 kg
+Altitude        : 2000 m
+Speed Vtas      : 90 m/s
+Gamma           : -3 deg
+Power Lever     : 0.38576
+
+Available variables [in SI units]:
+t - time
+Ax,Ay,Az - body specific forces
+p,q,r - body rotation rates
+phi,theta,psi - attitude
+u_n,v_n,w_n - velocity in the navigation frame (zero wind + flat Earth)
+vtas,alpha,beta - airdata states
+Mach
+gamma
+gear - landing gear, 0 is retracted, 1 is extended.
+flaps,de,da,dr,dte,dta,dtr - control surface deflections
+Tc1,Tc2 - throttle settings, not in any SI unit
